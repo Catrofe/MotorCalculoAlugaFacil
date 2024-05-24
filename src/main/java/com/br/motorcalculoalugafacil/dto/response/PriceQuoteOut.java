@@ -9,6 +9,7 @@ public record PriceQuoteOut(
         List<ComissionOut> lsComission,
         List<DiscountOut> lsDiscount,
         ExtraDriverOut mpExtraDriver,
+        KmCarOut mpKmCar,
         @NotNull CarOut mpCar,
         Double vlTotalPrice
 ) {

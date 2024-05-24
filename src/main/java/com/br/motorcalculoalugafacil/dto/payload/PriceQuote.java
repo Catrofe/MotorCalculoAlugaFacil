@@ -9,6 +9,7 @@ public record PriceQuote(
         List<Comission> lsComission,
         List<Discount> lsDiscount,
         ExtraDriver mpExtraDriver,
+        KmCar mpKmCar,
         @NotNull Car mpCar
 ) {
 }
