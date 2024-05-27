@@ -11,9 +11,10 @@ public class PriceQuoteService {
 
     private final CarCalculatePriceImpl carCalculatePriceImpl = new CarCalculatePriceImpl();
     private final CarKmCalculatePriceImpl carKmCalculatePriceImpl = new CarKmCalculatePriceImpl();
+    private final ExtraDriverCalculatePriceImpl extraDriverCalculatePriceImpl = new ExtraDriverCalculatePriceImpl();
 
     public PriceQuoteOut calculate(PriceQuote priceQuote) {
-        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl);
+        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl, extraDriverCalculatePriceImpl);
         return calculationManager.calculatePriceQuote(priceQuote);
     }
 
