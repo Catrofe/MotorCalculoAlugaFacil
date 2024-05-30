@@ -11,7 +11,11 @@ public class ExtraDriverCalculatePriceImpl implements ExtraDriverCalculatePrice 
         if (extraDriver == null) {
             return null;
         }
-        return new ExtraDriverOut(extraDriver.qtExtraDriver(), extraDriver.vlExtraDriverPerDay(), extraDriver.qtExtraDriver() * extraDriver.vlExtraDriverPerDay());
+        return new ExtraDriverOut(extraDriver.qtExtraDriver(), extraDriver.vlExtraDriverPerDay(), calculateTotalPrice(extraDriver));
+    }
+
+    private double calculateTotalPrice(ExtraDriver extraDriver) {
+        return extraDriver.qtExtraDriver() * extraDriver.vlExtraDriverPerDay();
     }
 
 }

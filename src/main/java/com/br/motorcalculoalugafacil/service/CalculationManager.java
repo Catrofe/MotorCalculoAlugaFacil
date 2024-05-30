@@ -7,6 +7,7 @@ import com.br.motorcalculoalugafacil.dto.response.KmCarOut;
 import com.br.motorcalculoalugafacil.dto.response.PriceQuoteOut;
 import com.br.motorcalculoalugafacil.port.CarCalculatePrice;
 import com.br.motorcalculoalugafacil.port.CarKmCalculatePrice;
+import com.br.motorcalculoalugafacil.port.ExtraDriverCalculatePrice;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class CalculationManager {
 
     private CarCalculatePrice carCalculatePrice;
     private CarKmCalculatePrice carKmCalculatePrice;
-    private ExtraDriverCalculatePriceImpl extraDriverCalculatePrice;
+    private ExtraDriverCalculatePrice extraDriverCalculatePrice;
 
 
     public PriceQuoteOut calculatePriceQuote(PriceQuote priceQuote) {
