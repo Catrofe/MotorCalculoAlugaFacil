@@ -14,7 +14,7 @@ public class ExtraDriverCalculatePriceImpl implements ExtraDriverCalculatePrice 
         return new ExtraDriverOut(extraDriver.qtExtraDriver(), extraDriver.vlExtraDriverPerDay(), calculateTotalPrice(extraDriver));
     }
 
-    private double calculateTotalPrice(ExtraDriver extraDriver) {
+    private static double calculateTotalPrice(ExtraDriver extraDriver) {
         return extraDriver.qtExtraDriver() * extraDriver.vlExtraDriverPerDay();
     }
 
