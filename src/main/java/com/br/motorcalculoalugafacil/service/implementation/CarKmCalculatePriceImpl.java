@@ -1,4 +1,4 @@
-package com.br.motorcalculoalugafacil.service;
+package com.br.motorcalculoalugafacil.service.implementation;
 
 import com.br.motorcalculoalugafacil.dto.payload.KmCar;
 import com.br.motorcalculoalugafacil.dto.response.KmCarOut;
