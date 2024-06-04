@@ -20,7 +20,7 @@ public class PriceQuoteService {
     private final FeesCalculatePriceImpl feesCalculatePriceImpl = new FeesCalculatePriceImpl();
 
     public PriceQuoteOut calculate(PriceQuote priceQuote) {
-        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl, extraDriverCalculatePriceImpl);
+        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl, extraDriverCalculatePriceImpl, comissionCalculatePriceImpl, discountCalculatePriceImpl, feesCalculatePriceImpl);
         return calculationManager.calculatePriceQuote(priceQuote);
     }
 
