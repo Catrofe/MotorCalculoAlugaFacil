@@ -5,7 +5,7 @@ import com.br.motorcalculoalugafacil.dto.response.FeesOut;
 
 import java.util.List;
 
-public interface FessCalculatePrice {
+public interface FeesCalculatePrice {
 
     List<FeesOut> calculatePrice(List<Fees> fees);
 
