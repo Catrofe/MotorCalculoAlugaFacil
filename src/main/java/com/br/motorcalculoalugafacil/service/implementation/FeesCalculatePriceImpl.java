@@ -9,6 +9,9 @@ import java.util.List;
 public class FeesCalculatePriceImpl implements FeesCalculatePrice {
     @Override
     public List<FeesOut> calculatePrice(List<Fees> fees, Double price) {
+        if (fees == null || fees.isEmpty()){
+            return List.of();
+        }
         return fees.stream().map(fee -> calculateFees(fee, price)).toList();
     }
 

@@ -9,6 +9,9 @@ import java.util.List;
 public class DiscountCalculatePriceImpl implements DiscountCalculatePrice {
     @Override
     public List<DiscountOut> calculatePrice(List<Discount> discounts, Double price) {
+        if (discounts == null || discounts.isEmpty()) {
+            return List.of();
+        }
         return discounts.stream().map(discount -> calculateDiscount(discount, price)).toList();
     }
 
