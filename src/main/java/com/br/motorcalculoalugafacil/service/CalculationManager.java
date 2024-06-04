@@ -20,8 +20,8 @@ public class CalculationManager {
     private CarKmCalculatePrice carKmCalculatePrice;
     private ExtraDriverCalculatePrice extraDriverCalculatePrice;
     private ComissionCalculatePrice comissionCalculatePrice;
-    private DiscountCalculatePrice discountCalculatePrice;
     private FeesCalculatePrice feesCalculatePrice;
+    private DiscountCalculatePrice discountCalculatePrice;
 
 
     public PriceQuoteOut calculatePriceQuote(PriceQuote priceQuote) {
