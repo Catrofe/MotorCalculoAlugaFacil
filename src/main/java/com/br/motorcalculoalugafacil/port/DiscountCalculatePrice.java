@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DiscountCalculatePrice {
 
-    List<DiscountOut> calculatePrice(List<Discount> discount);
+    List<DiscountOut> calculatePrice(List<Discount> discount, Double price);
 
 }

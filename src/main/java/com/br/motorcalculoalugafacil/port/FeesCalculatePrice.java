@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface FeesCalculatePrice {
 
-    List<FeesOut> calculatePrice(List<Fees> fees);
+    List<FeesOut> calculatePrice(List<Fees> fees, Double price);
 
 }

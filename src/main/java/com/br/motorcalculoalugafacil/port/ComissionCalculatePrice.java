@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ComissionCalculatePrice {
 
-    List<ComissionOut> calculatePrice(List<Comission> comission);
+    List<ComissionOut> calculatePrice(List<Comission> comission, Double price);
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class DiscountCalculatePriceImpl implements DiscountCalculatePrice {
     @Override
-    public List<DiscountOut> calculatePrice(List<Discount> discount) {
+    public List<DiscountOut> calculatePrice(List<Discount> discount, Double price) {
         return List.of();
     }
 }

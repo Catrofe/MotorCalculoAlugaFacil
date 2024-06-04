@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FeesCalculatePriceImpl implements FeesCalculatePrice {
     @Override
-    public List<FeesOut> calculatePrice(List<Fees> fees) {
+    public List<FeesOut> calculatePrice(List<Fees> fees, Double price) {
         return List.of();
     }
 }
