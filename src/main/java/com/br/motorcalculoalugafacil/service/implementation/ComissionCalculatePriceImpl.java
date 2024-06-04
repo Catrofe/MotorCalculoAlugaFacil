@@ -11,6 +11,9 @@ public class ComissionCalculatePriceImpl implements ComissionCalculatePrice {
 
     @Override
     public List<ComissionOut> calculatePrice(List<Comission> comissions, Double price) {
+        if (comissions == null || comissions.isEmpty()) {
+            return List.of();
+        }
         return comissions.stream()
                 .map(comission -> calculateComission(comission, price))
                 .collect(Collectors.toList());

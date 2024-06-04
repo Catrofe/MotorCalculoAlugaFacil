@@ -1,7 +1,5 @@
 package com.br.motorcalculoalugafacil.service;
 
-import com.br.motorcalculoalugafacil.dto.payload.Comission;
-import com.br.motorcalculoalugafacil.dto.payload.Discount;
 import com.br.motorcalculoalugafacil.dto.payload.PriceQuote;
 import com.br.motorcalculoalugafacil.dto.response.PriceQuoteOut;
 import com.br.motorcalculoalugafacil.service.implementation.*;
@@ -20,7 +18,7 @@ public class PriceQuoteService {
     private final FeesCalculatePriceImpl feesCalculatePriceImpl = new FeesCalculatePriceImpl();
 
     public PriceQuoteOut calculate(PriceQuote priceQuote) {
-        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl, extraDriverCalculatePriceImpl, comissionCalculatePriceImpl, discountCalculatePriceImpl, feesCalculatePriceImpl);
+        CalculationManager calculationManager = new CalculationManager(carCalculatePriceImpl, carKmCalculatePriceImpl, extraDriverCalculatePriceImpl, comissionCalculatePriceImpl, feesCalculatePriceImpl, discountCalculatePriceImpl);
         return calculationManager.calculatePriceQuote(priceQuote);
     }
 
