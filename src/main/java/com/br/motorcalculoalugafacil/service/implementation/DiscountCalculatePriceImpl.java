@@ -6,6 +6,8 @@ import com.br.motorcalculoalugafacil.port.DiscountCalculatePrice;
 
 import java.util.List;
 
+import static com.br.motorcalculoalugafacil.utils.TruncateValueCalculate.truncate;
+
 public class DiscountCalculatePriceImpl implements DiscountCalculatePrice {
     @Override
     public List<DiscountOut> calculatePrice(List<Discount> discounts, Double price) {
@@ -17,6 +19,6 @@ public class DiscountCalculatePriceImpl implements DiscountCalculatePrice {
 
     private DiscountOut calculateDiscount(Discount discount, Double price) {
         Double discountValue = (price * discount.pcDiscount() / 100) + discount.vlDiscount();
-        return new DiscountOut(discount.nmDiscount(), discount.vlDiscount(), discount.pcDiscount(), discountValue);
+        return new DiscountOut(discount.nmDiscount(), discount.vlDiscount(), discount.pcDiscount(), truncate(discountValue));
     }
 }

@@ -4,6 +4,8 @@ import com.br.motorcalculoalugafacil.dto.payload.KmCar;
 import com.br.motorcalculoalugafacil.dto.response.KmCarOut;
 import com.br.motorcalculoalugafacil.port.CarKmCalculatePrice;
 
+import static com.br.motorcalculoalugafacil.utils.TruncateValueCalculate.truncate;
+
 public class CarKmCalculatePriceImpl implements CarKmCalculatePrice {
 
     @Override
@@ -15,6 +17,6 @@ public class CarKmCalculatePriceImpl implements CarKmCalculatePrice {
         Double qtKm = car.qtKm().doubleValue();
         Double chargeEveryKm = car.chargeEveryKm().doubleValue();
         Double vlCalculate = (qtKm / chargeEveryKm) * car.vlKm();
-        return new KmCarOut(car.qtKm(), car.vlKm(), car.chargeEveryKm(), vlCalculate);
+        return new KmCarOut(car.qtKm(), car.vlKm(), car.chargeEveryKm(), truncate(vlCalculate));
     }
 }

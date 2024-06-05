@@ -7,6 +7,8 @@ import com.br.motorcalculoalugafacil.port.ComissionCalculatePrice;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.br.motorcalculoalugafacil.utils.TruncateValueCalculate.truncate;
+
 public class ComissionCalculatePriceImpl implements ComissionCalculatePrice {
 
     @Override
@@ -21,6 +23,6 @@ public class ComissionCalculatePriceImpl implements ComissionCalculatePrice {
 
     private ComissionOut calculateComission(Comission comission, Double price) {
         Double vlComissionValue = (price * (comission.pcComission() / 100)) + comission.vlComission();
-        return new ComissionOut(comission.nmComission(), comission.vlComission(), comission.pcComission(), vlComissionValue);
+        return new ComissionOut(comission.nmComission(), comission.vlComission(), comission.pcComission(), truncate(vlComissionValue));
     }
 }

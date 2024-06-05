@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.br.motorcalculoalugafacil.utils.TruncateValueCalculate.truncate;
+
 
 @Service
 @AllArgsConstructor
@@ -55,7 +57,7 @@ public class CalculationManager {
         if (extraDriverOut != null) {
             totalPrice += extraDriverOut.vlCalculate();
         }
-        return totalPrice;
+        return truncate(totalPrice);
     }
 
     private Double calculatePriceWithoutDescount(Double totalPriceRaw, List<FeesOut> feesOuts, List<ComissionOut> comissionOuts) {
@@ -66,7 +68,7 @@ public class CalculationManager {
         for (ComissionOut comissionOut : comissionOuts) {
             totalPrice += comissionOut.vlCalculate();
         }
-        return totalPrice;
+        return truncate(totalPrice);
     }
 
     private Double calculatePriceFinal(Double totalPriceWithoutDiscount, List<DiscountOut> discountOuts) {
@@ -74,6 +76,6 @@ public class CalculationManager {
         for (DiscountOut discountOut : discountOuts) {
             totalPrice -= discountOut.vlCalculate();
         }
-        return totalPrice;
+        return truncate(totalPrice);
     }
 }

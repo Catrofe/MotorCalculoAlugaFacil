@@ -4,6 +4,8 @@ import com.br.motorcalculoalugafacil.dto.payload.ExtraDriver;
 import com.br.motorcalculoalugafacil.dto.response.ExtraDriverOut;
 import com.br.motorcalculoalugafacil.port.ExtraDriverCalculatePrice;
 
+import static com.br.motorcalculoalugafacil.utils.TruncateValueCalculate.truncate;
+
 public class ExtraDriverCalculatePriceImpl implements ExtraDriverCalculatePrice {
 
     @Override
@@ -11,7 +13,7 @@ public class ExtraDriverCalculatePriceImpl implements ExtraDriverCalculatePrice 
         if (extraDriver == null) {
             return null;
         }
-        return new ExtraDriverOut(extraDriver.qtExtraDriver(), extraDriver.vlExtraDriverPerDay(), calculateTotalPrice(extraDriver));
+        return new ExtraDriverOut(extraDriver.qtExtraDriver(), extraDriver.vlExtraDriverPerDay(), truncate(calculateTotalPrice(extraDriver)));
     }
 
     private static double calculateTotalPrice(ExtraDriver extraDriver) {
